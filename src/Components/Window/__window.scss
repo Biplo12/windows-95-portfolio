@@ -42,3 +42,15 @@
 .window.closed {
   display: none;
 }
+
+.project-window,
+.about-window {
+  position: relative;
+}
+
+.window-focus {
+  z-index: 999;
+}
+.window-no-focus {
+  z-index: 1;
+}

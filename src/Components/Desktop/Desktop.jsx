@@ -10,68 +10,93 @@ const Desktop = () => {
   const [projects, setProjects] = useState(false);
   const [resume, setResume] = useState(false);
 
-  const [focus, setFocus] = useState(1);
+  const [aboutFocus, setAboutFocus] = useState(false);
+  const handleAboutFocus = () => setAboutFocus(!aboutFocus);
+
+  const [projectFocus, setProjectFocus] = useState(false);
+  const handleProjectFocus = () => setProjectFocus(!projectFocus);
+
+  // if(projectFocus === false && aboutFocus === true){
+  //   projectFocus === true;
+  //   aboutFocus === false;
+  // }
 
   const handleResume = () => setResume(!resume);
   const handleAbout = () => setAbout(!about);
   const handleProjects = () => setProjects(!projects);
 
-  const handleFocus = () => setFocus(focus + 1);
-  console.log(focus);
+  const index = 1;
+
   return (
     <div className="desktop-container">
       <div className="wallpaper">
         <h1>Robert Siński</h1>
       </div>
-      <Window
-        icon={computer}
-        title={"About me"}
-        handleWindow={handleAbout}
-        window={about}
-        content={
-          <div
-            className="about-container"
-            onClick={handleFocus}
-            style={{ zIndex: focus }}
-          >
-            <h1>Hi there, I'm Robert - aka Biplo12</h1>
-            <h2>I'm a junior web developer!</h2>
-            <ol>
-              <li>I'm currently learning MERN stack!</li>
-              <li>2022 Goals: contribute more!</li>
-              <li>I'm currently looking for job!</li>
-              <li>
-                How to reach me:{" "}
-                <a href="mailto:robertbiplosek@gmail.com">
-                  robertbiplosek@gmail.com
-                </a>
-              </li>
-            </ol>
-          </div>
+      <div
+        className={
+          !aboutFocus && projectFocus
+            ? "about-window window-focus"
+            : "about-window window-no-focus"
         }
-      />
-      <Window
-        icon={folder}
-        title={"My Projects"}
-        handleWindow={handleProjects}
-        window={projects}
-        content={
-          <div className="project-container">
-            <h1>Hi there, I'm Robert - aka Biplo12</h1>
-          </div>
+        onClick={handleAboutFocus}
+      >
+        <Window
+          icon={computer}
+          title={"About me"}
+          handleWindow={handleAbout}
+          window={about}
+          content={
+            <div className="about-window">
+              <h1>Hi there, I'm Robert - aka Biplo12</h1>
+              <h2>I'm a junior web developer!</h2>
+              <ol>
+                <li>I'm currently learning MERN stack!</li>
+                <li>2022 Goals: contribute more!</li>
+                <li>I'm currently looking for job!</li>
+                <li>
+                  How to reach me:{" "}
+                  <a href="mailto:robertbiplosek@gmail.com">
+                    robertbiplosek@gmail.com
+                  </a>
+                </li>
+              </ol>
+            </div>
+          }
+        />
+      </div>
+      <div
+        className={
+          !projectFocus && aboutFocus
+            ? "project-window window-focus"
+            : "project-window window-no-focus"
         }
-      />
-      <Window
-        icon={document}
-        title={"My Projects"}
-        handleWindow={handleResume}
-        window={resume}
-        content={
-          <div className="project-container">
-            <h1>Resume</h1>
-          </div>
-        }
-      />
+        onClick={handleProjectFocus}
+      >
+        <Window
+          icon={folder}
+          title={"My Projects"}
+          handleWindow={handleProjects}
+          window={projects}
+          content={
+            <div className="project-container">
+              <h1>Hi there, I'm Robert - aka Biplo12</h1>
+            </div>
+          }
+        />
+      </div>
+      <div className="resume-window " style={{ zIndex: "1" }}>
+        <Window
+          icon={document}
+          title={"Resume"}
+          handleWindow={handleResume}
+          window={resume}
+          content={
+            <div className="project-container">
+              <h1>Resume</h1>
+            </div>
+          }
+        />
+      </div>
       <div className="desktop-icons">
         <Icon
           window={about}
