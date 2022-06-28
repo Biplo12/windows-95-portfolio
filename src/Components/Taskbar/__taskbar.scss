@@ -1,0 +1,119 @@
+.taskbar-container {
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: $grey;
+  border-top: ridge 2px white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.5rem;
+  .start-button {
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $grey;
+      outline: none;
+      cursor: pointer;
+      img {
+        padding-right: 0.25rem;
+      }
+    }
+    .buttonOn {
+      border-top: inset 2px black;
+      border-left: inset 2px black;
+      border-bottom: inset 2px white;
+      border-right: inset 2px white;
+    }
+    .buttonOff {
+      border-top: ridge 3px white;
+      border-left: ridge 3px white;
+      border-bottom: ridge 2px black;
+      border-right: ridge 2px grey;
+    }
+  }
+
+  .taskbar-clock {
+    color: black;
+    border-top: inset 2px grey;
+    border-left: inset 2px grey;
+    border-bottom: inset 2px white;
+    border-right: inset 2px white;
+  }
+}
+.menu {
+  height: 240px;
+  width: 160px;
+  background-color: $grey;
+  display: flex;
+  justify-content: space-between;
+  border-top: ridge 3px white;
+  border-left: ridge 3px white;
+  border-bottom: ridge 2px black;
+  border-right: ridge 2px grey;
+  z-index: 99;
+}
+.menu.closed {
+  position: absolute;
+  top: -1000px;
+  display: none;
+}
+.menu.opened {
+  position: absolute;
+  bottom: 30px;
+  left: 2px;
+  .menu-left {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 50px;
+    width: 30px;
+    background-color: $grey-darker;
+    p {
+      font-size: 1.8rem;
+      display: flex;
+      color: #c0b4a3;
+      transform: rotate(-90deg);
+      span {
+        color: #e7fbff;
+        padding-left: 0.2rem;
+      }
+    }
+  }
+  .menu-right {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    ul {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      li {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 35px;
+        a {
+          font-size: 1.5rem;
+          cursor: pointer;
+          padding-left: 0.5rem;
+        }
+      }
+      li:hover {
+        background-color: $blue;
+        color: white;
+      }
+      li:last-child {
+        border-top: ridge 2px white;
+      }
+    }
+  }
+}
