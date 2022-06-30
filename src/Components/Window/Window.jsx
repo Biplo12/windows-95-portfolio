@@ -10,7 +10,9 @@ const Window = ({ icon, title, content, handleWindow, window }) => {
             <img src={icon} alt={`${title} icon`} />
             <p>{title}</p>
           </div>
-          <button onClick={handleWindow}>X</button>
+          <button onClick={handleWindow} onTouchEnd={handleWindow}>
+            X
+          </button>
         </div>
         <div className="window-content">{content}</div>
       </div>

@@ -11,7 +11,9 @@ const Folder = ({ folder, icon, title, handleFolder, content }) => {
             <img src={icon} alt={`${title} icon`} />
             <p>{title}</p>
           </div>
-          <button onClick={handleFolder}>X</button>
+          <button onClick={handleFolder} onTouchEnd={handleFolder}>
+            X
+          </button>
         </div>
         <div className="folder-options">
           <ul>

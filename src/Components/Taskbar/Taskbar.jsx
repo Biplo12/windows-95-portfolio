@@ -65,6 +65,7 @@ const Taskbar = () => {
         <div className="start-button">
           <button
             onClick={() => setStart(!start)}
+            onTouchEnd={() => setStart(!start)}
             className={start ? "buttonOn" : "buttonOff"}
             ref={ref}
           >
