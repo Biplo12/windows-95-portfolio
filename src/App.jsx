@@ -6,8 +6,8 @@ import Desktop from "./Components/Desktop/Desktop";
 const App = () => {
   return (
     <>
-      {/* <Taskbar /> */}
       <Desktop />
+      <Taskbar />
     </>
   );
 };
