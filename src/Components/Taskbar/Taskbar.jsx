@@ -1,3 +1,5 @@
+import React from "react";
+
 import { useState, useEffect } from "react";
 import startButtonLogo from "../../Images/taskbar/start-button-logo.png";
 import pdf from "./robert-sinski-cv.pdf";

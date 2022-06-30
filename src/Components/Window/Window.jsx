@@ -1,4 +1,5 @@
 import Draggable from "react-draggable";
+import React from "react";
 
 const Window = ({ icon, title, content, handleWindow, window }) => {
   return (
