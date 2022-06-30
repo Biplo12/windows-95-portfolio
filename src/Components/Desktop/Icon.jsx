@@ -1,8 +1,12 @@
 import React from "react";
 
-const icon = ({ window, handler, image, title }) => {
+const icon = ({ window, singlehandler, doublehandler, image, title, icon }) => {
   return (
-    <div className="desktop-icon" onDoubleClick={window ? undefined : handler}>
+    <div
+      className={icon ? "desktop-icon marked" : "desktop-icon"}
+      onClick={singlehandler}
+      onDoubleClick={window ? undefined : doublehandler}
+    >
       <img src={image} alt={`${image} icon`} />
       <p>{title}</p>
     </div>

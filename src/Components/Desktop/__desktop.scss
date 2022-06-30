@@ -1,5 +1,5 @@
 .desktop-container {
-  width: 100%;
+  width: auto;
   height: 100%;
   .wallpaper {
     h1 {
@@ -9,9 +9,11 @@
       transform: translate(-50%, -50%);
       font-size: 5rem;
       text-align: center;
+      letter-spacing: 10px;
     }
   }
   .desktop-icons {
+    width: 64px;
     height: 100%;
     padding: 1rem;
     .desktop-icon {
@@ -23,17 +25,22 @@
       height: 64px;
       margin-top: 1rem;
       cursor: pointer;
-      z-index: 999;
       img {
         height: 32px;
       }
       p {
-        width: 100%;
         text-align: center;
-        padding-top: 0.35rem;
+        margin-top: 0.35rem;
+        padding: 2px;
       }
       .paragrafBlue {
         background: $blue;
+      }
+    }
+    .marked {
+      p {
+        border: 1px dotted white;
+        background-color: $blue;
       }
     }
   }

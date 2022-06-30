@@ -48,9 +48,13 @@
   position: relative;
 }
 
-.window-focus {
+.focus {
   z-index: 999;
 }
-.window-no-focus {
-  z-index: 1;
+.no-focus {
+  z-index: 0;
+}
+
+.resume-window {
+  z-index: 10;
 }

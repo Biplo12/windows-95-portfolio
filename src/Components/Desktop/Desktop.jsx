@@ -4,28 +4,30 @@ import document from "../../Images/window/document.png";
 import folder from "../../Images/Desktop/folder.png";
 import computer from "../../Images/Desktop/computer.png";
 import { useState } from "react";
+import OutsideClickHandler from "react-outside-click-handler";
 
 const Desktop = () => {
   const [about, setAbout] = useState(true);
   const [projects, setProjects] = useState(false);
   const [resume, setResume] = useState(false);
-
   const [aboutFocus, setAboutFocus] = useState(false);
-  const handleAboutFocus = () => setAboutFocus(!aboutFocus);
-
   const [projectFocus, setProjectFocus] = useState(false);
-  const handleProjectFocus = () => setProjectFocus(!projectFocus);
+  const [resumeFocus, setResumeFocus] = useState(false);
 
-  // if(projectFocus === false && aboutFocus === true){
-  //   projectFocus === true;
-  //   aboutFocus === false;
-  // }
-
-  const handleResume = () => setResume(!resume);
   const handleAbout = () => setAbout(!about);
   const handleProjects = () => setProjects(!projects);
+  const handleResume = () => setResume(!resume);
 
-  const index = 1;
+  //icons focus
+
+  const [aboutIconFocus, setAboutIconFocus] = useState(false);
+  const handleAboutIconFocus = () => setAboutIconFocus(!aboutIconFocus);
+
+  const [projectIconFocus, setProjectIconFocus] = useState(false);
+  const handleProjectIconFocus = () => setProjectIconFocus(!projectIconFocus);
+
+  const [resumeIconFocus, setResumeIconFocus] = useState(false);
+  const handleResumeIconFocus = () => setResumeIconFocus(!resumeIconFocus);
 
   return (
     <div className="desktop-container">
@@ -33,12 +35,10 @@ const Desktop = () => {
         <h1>Robert Siński</h1>
       </div>
       <div
-        className={
-          !aboutFocus && projectFocus
-            ? "about-window window-focus"
-            : "about-window window-no-focus"
-        }
-        onClick={handleAboutFocus}
+        className={aboutFocus ? "about-window focus" : "about-window no-focus"}
+        tabIndex={1}
+        onFocus={() => setAboutFocus(!aboutFocus)}
+        onBlur={() => setAboutFocus(!aboutFocus)}
       >
         <Window
           icon={computer}
@@ -64,13 +64,14 @@ const Desktop = () => {
           }
         />
       </div>
+
       <div
         className={
-          !projectFocus && aboutFocus
-            ? "project-window window-focus"
-            : "project-window window-no-focus"
+          projectFocus ? "project-window focus" : "project-window no-focus"
         }
-        onClick={handleProjectFocus}
+        tabIndex={0}
+        onFocus={() => setProjectFocus(!projectFocus)}
+        onBlur={() => setProjectFocus(!projectFocus)}
       >
         <Window
           icon={folder}
@@ -84,12 +85,18 @@ const Desktop = () => {
           }
         />
       </div>
-      <div className="resume-window " style={{ zIndex: "1" }}>
+      <div
+        className={resumeFocus ? "about-window focus" : "about-window no-focus"}
+        tabIndex={0}
+        onFocus={() => setResumeFocus(!resumeFocus)}
+        onBlur={() => setResumeFocus(!resumeFocus)}
+      >
         <Window
           icon={document}
           title={"Resume"}
           handleWindow={handleResume}
           window={resume}
+          tabIndex={0}
           content={
             <div className="project-container">
               <h1>Resume</h1>
@@ -98,24 +105,39 @@ const Desktop = () => {
         />
       </div>
       <div className="desktop-icons">
-        <Icon
-          window={about}
-          handler={handleAbout}
-          image={computer}
-          title={"About me"}
-        />
-        <Icon
-          window={projects}
-          handler={handleProjects}
-          image={folder}
-          title={"My Projects"}
-        />
-        <Icon
-          window={resume}
-          handler={handleResume}
-          image={document}
-          title={"Resume"}
-        />
+        <OutsideClickHandler onOutsideClick={() => [setAboutIconFocus(false)]}>
+          <Icon
+            window={about}
+            singlehandler={handleAboutIconFocus}
+            doublehandler={handleAbout}
+            icon={aboutIconFocus}
+            image={computer}
+            title={"About me"}
+          />
+        </OutsideClickHandler>
+        <OutsideClickHandler
+          onOutsideClick={() => [setProjectIconFocus(false)]}
+        >
+          <Icon
+            window={projects}
+            singlehandler={handleProjectIconFocus}
+            icon={projectIconFocus}
+            doublehandler={handleProjects}
+            image={folder}
+            title={"My Projects"}
+          />
+        </OutsideClickHandler>
+
+        <OutsideClickHandler onOutsideClick={() => [setResumeIconFocus(false)]}>
+          <Icon
+            window={resume}
+            singlehandler={handleResumeIconFocus}
+            icon={resumeIconFocus}
+            doublehandler={handleResume}
+            image={document}
+            title={"Resume"}
+          />
+        </OutsideClickHandler>
       </div>
     </div>
   );

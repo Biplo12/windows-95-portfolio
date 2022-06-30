@@ -1,6 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import startButtonLogo from "../../Images/taskbar/start-button-logo.png";
 import pdf from "./robert-sinski-cv.pdf";
+import OutsideClickHandler from "react-outside-click-handler";
+
 const Taskbar = () => {
   const [start, setStart] = useState(false);
   const [time, setTime] = useState(new Date());
@@ -17,6 +19,7 @@ const Taskbar = () => {
     minute: "numeric",
     hour12: true,
   });
+
   return (
     <>
       <div className={start ? "menu opened" : "menu closed"}>
@@ -53,13 +56,19 @@ const Taskbar = () => {
       </div>
       <div className="taskbar-container">
         <div className="start-button">
-          <button
-            onClick={handleClick}
-            className={start ? "buttonOn" : "buttonOff"}
-          >
-            <img src={startButtonLogo} alt="start button logo" height="16px" />
-            Start
-          </button>
+          <OutsideClickHandler onOutsideClick={() => [setStart(false)]}>
+            <button
+              onClick={() => setStart(!start)}
+              className={start ? "buttonOn" : "buttonOff"}
+            >
+              <img
+                src={startButtonLogo}
+                alt="start button logo"
+                height="16px"
+              />
+              Start
+            </button>
+          </OutsideClickHandler>
         </div>
         <div className="taskbar-clock">{clock}</div>
       </div>
