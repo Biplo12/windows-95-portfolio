@@ -29,51 +29,56 @@ const Taskbar = () => {
 
   return (
     <>
-      <div className={start ? "menu opened" : "menu closed"}>
-        <div className="menu-left">
-          <p>
-            Windows <span>95</span>
-          </p>
+      <div ref={ref} className="bar-conatiner">
+        <div className={start ? "menu opened" : "menu closed"}>
+          <div className="menu-left">
+            <p>
+              Windows <span>95</span>
+            </p>
+          </div>
+          <div className="menu-right">
+            <ul>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/robert-si%C5%84ski-037398227/"
+                  target={"_blank"}
+                >
+                  LinkedIn
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/Biplo12" target={"_blank"}>
+                  Github
+                </a>
+              </li>
+              <li>
+                <a href={pdf} target={"_blank"}>
+                  Resume
+                </a>
+              </li>
+              <li>
+                <a>Shutdown</a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div className="menu-right">
-          <ul>
-            <li>
-              <a
-                href="https://www.linkedin.com/in/robert-si%C5%84ski-037398227/"
-                target={"_blank"}
-              >
-                LinkedIn
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/Biplo12" target={"_blank"}>
-                Github
-              </a>
-            </li>
-            <li>
-              <a href={pdf} target={"_blank"}>
-                Resume
-              </a>
-            </li>
-            <li>
-              <a>Shutdown</a>
-            </li>
-          </ul>
+        <div className="taskbar-container">
+          <div className="start-button">
+            <button
+              onClick={() => setStart(!start)}
+              onTouchEnd={() => setStart(!start)}
+              className={start ? "buttonOn" : "buttonOff"}
+            >
+              <img
+                src={startButtonLogo}
+                alt="start button logo"
+                height="16px"
+              />
+              Start
+            </button>
+          </div>
+          <div className="taskbar-clock">{clock}</div>
         </div>
-      </div>
-      <div className="taskbar-container">
-        <div className="start-button">
-          <button
-            onClick={() => setStart(!start)}
-            onTouchEnd={() => setStart(!start)}
-            className={start ? "buttonOn" : "buttonOff"}
-            ref={ref}
-          >
-            <img src={startButtonLogo} alt="start button logo" height="16px" />
-            Start
-          </button>
-        </div>
-        <div className="taskbar-clock">{clock}</div>
       </div>
     </>
   );
