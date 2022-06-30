@@ -1,10 +1,12 @@
-import "./Components/Styles/__globalStyles.scss";
-import Taskbar from "./Components/Taskbar/Taskbar";
+import React from "react";
+// import "../../bc/Components/Styles/__globalStyles.scss";
+
+// import Taskbar from "../../bc/Components/Taskbar/Taskbar";
 // import Desktop from "./Components/Desktop/Desktop";
 const App = () => {
   return (
     <>
-      <Taskbar />
+      {/* <Taskbar /> */}
       {/* <Desktop /> */}
     </>
   );
