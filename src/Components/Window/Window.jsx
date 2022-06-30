@@ -1,6 +1,6 @@
 import Draggable from "react-draggable";
 
-const WelcomePage = ({ icon, title, content, handleWindow, window }) => {
+const Window = ({ icon, title, content, handleWindow, window }) => {
   return (
     <Draggable handle=".topbar">
       <div className={window ? "window opened" : "window closed "}>
