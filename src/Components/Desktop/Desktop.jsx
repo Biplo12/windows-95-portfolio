@@ -1,4 +1,4 @@
-import OutsideClickHandler from "react-outside-click-handler";
+// import OutsideClickHandler from "react-outside-click-handler";
 import { useState } from "react";
 import Window from "../Window/Window";
 import Folder from "../Folder/Folder";
@@ -140,78 +140,78 @@ const Desktop = () => {
           content={
             <div className="project-container">
               <div className="desktop-icons">
-                <OutsideClickHandler
+                {/* <OutsideClickHandler
                   onOutsideClick={() => [setAtelIconFocus(false)]}
-                >
-                  <Icon
-                    window={atel}
-                    singlehandler={handleAtelIconFocus}
-                    doublehandler={handleAtel}
-                    icon={atelIconFocus}
-                    image={aTel}
-                    title={"A-tel Borzek"}
-                  />
-                </OutsideClickHandler>
+                > */}
+                <Icon
+                  window={atel}
+                  singlehandler={handleAtelIconFocus}
+                  doublehandler={handleAtel}
+                  icon={atelIconFocus}
+                  image={aTel}
+                  title={"A-tel Borzek"}
+                />
+                {/* </OutsideClickHandler>
                 <OutsideClickHandler
                   onOutsideClick={() => [setCommerceIconFocus(false)]}
-                >
-                  <Icon
-                    window={commerce}
-                    singlehandler={handleCommerceIconFocus}
-                    doublehandler={handleCommerce}
-                    icon={commerceIconFocus}
-                    image={commerceLogo}
-                    title={"E-commerce MERN"}
-                  />
-                </OutsideClickHandler>
+                > */}
+                <Icon
+                  window={commerce}
+                  singlehandler={handleCommerceIconFocus}
+                  doublehandler={handleCommerce}
+                  icon={commerceIconFocus}
+                  image={commerceLogo}
+                  title={"E-commerce MERN"}
+                />
+                {/* </OutsideClickHandler>
                 <OutsideClickHandler
                   onOutsideClick={() => [setServiceIconFocus(false)]}
-                >
-                  <Icon
-                    window={service}
-                    singlehandler={handleServiceIconFocus}
-                    doublehandler={handleService}
-                    icon={serviceIconFocus}
-                    image={serviceLogo}
-                    title={"Kamil Siński - Computer Service"}
-                  />
-                </OutsideClickHandler>
+                > */}
+                <Icon
+                  window={service}
+                  singlehandler={handleServiceIconFocus}
+                  doublehandler={handleService}
+                  icon={serviceIconFocus}
+                  image={serviceLogo}
+                  title={"Kamil Siński - Computer Service"}
+                />
+                {/* </OutsideClickHandler>
                 <OutsideClickHandler
                   onOutsideClick={() => [setTwitterIconFocus(false)]}
-                >
-                  <Icon
-                    window={twitter}
-                    singlehandler={handleTwitterIconFocus}
-                    doublehandler={handleTwitter}
-                    icon={twitterIconFocus}
-                    image={twitterLogo}
-                    title={"Twitter-Github-bot"}
-                  />
-                </OutsideClickHandler>
+                > */}
+                <Icon
+                  window={twitter}
+                  singlehandler={handleTwitterIconFocus}
+                  doublehandler={handleTwitter}
+                  icon={twitterIconFocus}
+                  image={twitterLogo}
+                  title={"Twitter-Github-bot"}
+                />
+                {/* </OutsideClickHandler>
                 <OutsideClickHandler
                   onOutsideClick={() => [setDashboardIconFocus(false)]}
-                >
-                  <Icon
-                    window={dashboard}
-                    singlehandler={handleDashboardIconFocus}
-                    doublehandler={handleDashboard}
-                    icon={dashboardIconFocus}
-                    image={dashboardLogo}
-                    title={"Dashboard"}
-                  />
-                </OutsideClickHandler>
+                > */}
+                <Icon
+                  window={dashboard}
+                  singlehandler={handleDashboardIconFocus}
+                  doublehandler={handleDashboard}
+                  icon={dashboardIconFocus}
+                  image={dashboardLogo}
+                  title={"Dashboard"}
+                />
+                {/* </OutsideClickHandler>
                 <OutsideClickHandler
                   onOutsideClick={() => [setSpotifyIconFocus(false)]}
-                >
-                  <Icon
-                    window={spotify}
-                    singlehandler={handleSpotifyIconFocus}
-                    doublehandler={handleSpotify}
-                    icon={spotifyIconFocus}
-                    image={spotifyLogo}
-                    title={"Spotify-node-api"}
-                  />
-                </OutsideClickHandler>
+                > */}
+                <Icon
+                  window={spotify}
+                  singlehandler={handleSpotifyIconFocus}
+                  doublehandler={handleSpotify}
+                  icon={spotifyIconFocus}
+                  image={spotifyLogo}
+                  title={"Spotify-node-api"}
+                />
+                {/* </OutsideClickHandler> */}
               </div>
             </div>
           }
