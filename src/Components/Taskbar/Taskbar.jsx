@@ -7,24 +7,18 @@ const Taskbar = () => {
   const [start, setStart] = useState(false);
   const [time, setTime] = useState(new Date());
 
-  const ref = useRef(null);
-
   useEffect(() => {
     setInterval(() => {
       setTime(new Date());
     }, 1000);
   }, []);
 
-  const onClickOutside = () => {
-    setStart(false);
-  };
-
+  const ref = useRef(null);
   const closeOpenMenus = (e) => {
     if (ref.current && setStart && !ref.current.contains(e.target)) {
       setStart(false);
     }
   };
-
   document.addEventListener("mousedown", closeOpenMenus);
 
   const clock = time.toLocaleString("en-US", {
