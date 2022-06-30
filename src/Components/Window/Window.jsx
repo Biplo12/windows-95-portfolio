@@ -1,5 +1,5 @@
 // import Draggable from "react-draggable";
-import { useState } from "react";
+// import { useState } from "react";
 
 const WelcomePage = ({ icon, title, content, handleWindow, window }) => {
   return (
