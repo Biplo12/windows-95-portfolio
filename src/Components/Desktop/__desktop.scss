@@ -1,5 +1,4 @@
 .desktop-container {
-  width: auto;
   height: 100%;
   .wallpaper {
     h1 {
@@ -13,6 +12,7 @@
     }
   }
   .desktop-icons {
+    width: auto;
     padding: 1rem;
     .desktop-icon {
       display: flex;
@@ -30,9 +30,6 @@
         text-align: center;
         margin-top: 0.35rem;
         padding: 2px;
-      }
-      .paragrafBlue {
-        background: $blue;
       }
     }
     .marked {

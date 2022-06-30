@@ -1,5 +1,5 @@
 .folder {
-  width: 750px;
+  width: 800px;
   height: 500px;
   position: absolute;
   left: 25%;
@@ -85,7 +85,9 @@
 }
 .atel-window,
 .commerce-window,
-.service-window {
+.service-window .twitter-window,
+.dashboard-window,
+.spotify-window {
   position: relative;
 }
 .folder.closed {

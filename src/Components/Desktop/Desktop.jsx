@@ -9,6 +9,9 @@ import computer from "../../Images/Desktop/computer.png";
 import aTel from "../../Images/folder/a-tel.png";
 import commerceLogo from "../../Images/folder/commerce.png";
 import serviceLogo from "../../Images/folder/sinski.png";
+import twitterLogo from "../../Images/folder/twitter.png";
+import dashboardLogo from "../../Images/folder/dashboard.png";
+import spotifyLogo from "../../Images/folder/spotify.png";
 
 const Desktop = () => {
   //About states
@@ -41,6 +44,21 @@ const Desktop = () => {
   const [serviceFocus, setServiceFocus] = useState(false);
   const handleService = () => setService(!service);
 
+  //twitter-github states
+  const [twitter, setTwitter] = useState(false);
+  const [twitterFocus, setTwitterFocus] = useState(false);
+  const handleTwitter = () => setTwitter(!twitter);
+
+  //dashboard states
+  const [dashboard, setDashboard] = useState(false);
+  const [dashboardFocus, setDashboardFocus] = useState(false);
+  const handleDashboard = () => setDashboard(!dashboard);
+
+  //spotify-node-api states
+  const [spotify, setSpotify] = useState(false);
+  const [spotifyFocus, setSpotifyFocus] = useState(false);
+  const handleSpotify = () => setSpotify(!spotify);
+
   //icons focus states
   const [aboutIconFocus, setAboutIconFocus] = useState(false);
   const handleAboutIconFocus = () => setAboutIconFocus(!aboutIconFocus);
@@ -60,6 +78,16 @@ const Desktop = () => {
   //
   const [serviceIconFocus, setServiceIconFocus] = useState(false);
   const handleServiceIconFocus = () => setServiceIconFocus(!serviceIconFocus);
+  //
+  const [twitterIconFocus, setTwitterIconFocus] = useState(false);
+  const handleTwitterIconFocus = () => setTwitterIconFocus(!twitterIconFocus);
+  //
+  const [dashboardIconFocus, setDashboardIconFocus] = useState(false);
+  const handleDashboardIconFocus = () =>
+    setDashboardIconFocus(!dashboardIconFocus);
+  //
+  const [spotifyIconFocus, setSpotifyIconFocus] = useState(false);
+  const handleSpotifyIconFocus = () => setSpotifyIconFocus(!spotifyIconFocus);
 
   return (
     <div className="desktop-container">
@@ -148,6 +176,42 @@ const Desktop = () => {
                     title={"Kamil Siński - Computer Service"}
                   />
                 </OutsideClickHandler>
+                <OutsideClickHandler
+                  onOutsideClick={() => [setTwitterIconFocus(false)]}
+                >
+                  <Icon
+                    window={twitter}
+                    singlehandler={handleTwitterIconFocus}
+                    doublehandler={handleTwitter}
+                    icon={twitterIconFocus}
+                    image={twitterLogo}
+                    title={"Twitter-Github-bot"}
+                  />
+                </OutsideClickHandler>
+                <OutsideClickHandler
+                  onOutsideClick={() => [setDashboardIconFocus(false)]}
+                >
+                  <Icon
+                    window={dashboard}
+                    singlehandler={handleDashboardIconFocus}
+                    doublehandler={handleDashboard}
+                    icon={dashboardIconFocus}
+                    image={dashboardLogo}
+                    title={"Dashboard"}
+                  />
+                </OutsideClickHandler>
+                <OutsideClickHandler
+                  onOutsideClick={() => [setSpotifyIconFocus(false)]}
+                >
+                  <Icon
+                    window={spotify}
+                    singlehandler={handleSpotifyIconFocus}
+                    doublehandler={handleSpotify}
+                    icon={spotifyIconFocus}
+                    image={spotifyLogo}
+                    title={"Spotify-node-api"}
+                  />
+                </OutsideClickHandler>
               </div>
             </div>
           }
@@ -201,6 +265,56 @@ const Desktop = () => {
               Kamil Siński - Computer Service
             </div>
           }
+        />
+      </div>
+      <div
+        className={
+          twitterFocus ? "twitter-window focus" : "twitter-window no-focus"
+        }
+        tabIndex={0}
+        onFocus={() => setTwitterFocus(!twitterFocus)}
+        onBlur={() => setTwitterFocus(!twitterFocus)}
+      >
+        <Window
+          icon={twitterLogo}
+          title={"Twitter-Github-bot"}
+          handleWindow={handleTwitter}
+          window={twitter}
+          content={<div className="twitter-window">Twitter-Github-bot </div>}
+        />
+      </div>
+      <div
+        className={
+          dashboardFocus
+            ? "dashboard-window focus"
+            : "dashboard-window no-focus"
+        }
+        tabIndex={0}
+        onFocus={() => setDashboardFocus(!dashboardFocus)}
+        onBlur={() => setDashboardFocus(!dashboardFocus)}
+      >
+        <Window
+          icon={dashboardLogo}
+          title={"Dashboard"}
+          handleWindow={handleDashboard}
+          window={dashboard}
+          content={<div className="dashboard-window">Dashboard</div>}
+        />
+      </div>
+      <div
+        className={
+          spotifyFocus ? "spotify-window focus" : "spotify-window no-focus"
+        }
+        tabIndex={0}
+        onFocus={() => setSpotifyFocus(!spotifyFocus)}
+        onBlur={() => setSpotifyFocus(!spotifyFocus)}
+      >
+        <Window
+          icon={spotifyLogo}
+          title={"Spotify-node-api"}
+          handleWindow={handleSpotify}
+          window={spotify}
+          content={<div className="spotify-window">Spotify-node-api</div>}
         />
       </div>
       <div
