@@ -1,12 +1,13 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import startButtonLogo from "../../Images/taskbar/start-button-logo.png";
 import pdf from "./robert-sinski-cv.pdf";
-import OutsideClickHandler from "react-outside-click-handler";
 
 const Taskbar = () => {
   const [start, setStart] = useState(false);
   const [time, setTime] = useState(new Date());
+
+  const ref = useRef(null);
 
   useEffect(() => {
     setInterval(() => {
@@ -14,7 +15,18 @@ const Taskbar = () => {
     }, 1000);
   }, []);
 
-  const handleClick = () => setStart(!start);
+  const onClickOutside = () => {
+    setStart(false);
+  };
+
+  const closeOpenMenus = (e) => {
+    if (ref.current && setStart && !ref.current.contains(e.target)) {
+      setStart(false);
+    }
+  };
+
+  document.addEventListener("mousedown", closeOpenMenus);
+
   const clock = time.toLocaleString("en-US", {
     hour: "numeric",
     minute: "numeric",
@@ -57,19 +69,14 @@ const Taskbar = () => {
       </div>
       <div className="taskbar-container">
         <div className="start-button">
-          <OutsideClickHandler onOutsideClick={() => [setStart(false)]}>
-            <button
-              onClick={() => setStart(!start)}
-              className={start ? "buttonOn" : "buttonOff"}
-            >
-              <img
-                src={startButtonLogo}
-                alt="start button logo"
-                height="16px"
-              />
-              Start
-            </button>
-          </OutsideClickHandler>
+          <button
+            onClick={() => setStart(!start)}
+            className={start ? "buttonOn" : "buttonOff"}
+            ref={ref}
+          >
+            <img src={startButtonLogo} alt="start button logo" height="16px" />
+            Start
+          </button>
         </div>
         <div className="taskbar-clock">{clock}</div>
       </div>

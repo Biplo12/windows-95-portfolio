@@ -1,5 +1,4 @@
-// import OutsideClickHandler from "react-outside-click-handler";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Window from "../Window/Window";
 import Folder from "../Folder/Folder";
 import Icon from "./Icon";
@@ -59,36 +58,6 @@ const Desktop = () => {
   const [spotifyFocus, setSpotifyFocus] = useState(false);
   const handleSpotify = () => setSpotify(!spotify);
 
-  //icons focus states
-  const [aboutIconFocus, setAboutIconFocus] = useState(false);
-  const handleAboutIconFocus = () => setAboutIconFocus(!aboutIconFocus);
-  //
-  const [projectIconFocus, setProjectIconFocus] = useState(false);
-  const handleProjectIconFocus = () => setProjectIconFocus(!projectIconFocus);
-  //
-  const [resumeIconFocus, setResumeIconFocus] = useState(false);
-  const handleResumeIconFocus = () => setResumeIconFocus(!resumeIconFocus);
-  //
-  const [atelIconFocus, setAtelIconFocus] = useState(false);
-  const handleAtelIconFocus = () => setAtelIconFocus(!atelIconFocus);
-  //
-  const [commerceIconFocus, setCommerceIconFocus] = useState(false);
-  const handleCommerceIconFocus = () =>
-    setCommerceIconFocus(!commerceIconFocus);
-  //
-  const [serviceIconFocus, setServiceIconFocus] = useState(false);
-  const handleServiceIconFocus = () => setServiceIconFocus(!serviceIconFocus);
-  //
-  const [twitterIconFocus, setTwitterIconFocus] = useState(false);
-  const handleTwitterIconFocus = () => setTwitterIconFocus(!twitterIconFocus);
-  //
-  const [dashboardIconFocus, setDashboardIconFocus] = useState(false);
-  const handleDashboardIconFocus = () =>
-    setDashboardIconFocus(!dashboardIconFocus);
-  //
-  const [spotifyIconFocus, setSpotifyIconFocus] = useState(false);
-  const handleSpotifyIconFocus = () => setSpotifyIconFocus(!spotifyIconFocus);
-
   return (
     <div className="desktop-container">
       <div className="wallpaper">
@@ -140,78 +109,42 @@ const Desktop = () => {
           content={
             <div className="project-container">
               <div className="desktop-icons">
-                {/* <OutsideClickHandler
-                  onOutsideClick={() => [setAtelIconFocus(false)]}
-                > */}
                 <Icon
                   window={atel}
-                  singlehandler={handleAtelIconFocus}
                   doublehandler={handleAtel}
-                  icon={atelIconFocus}
                   image={aTel}
                   title={"A-tel Borzek"}
                 />
-                {/* </OutsideClickHandler>
-                <OutsideClickHandler
-                  onOutsideClick={() => [setCommerceIconFocus(false)]}
-                > */}
                 <Icon
                   window={commerce}
-                  singlehandler={handleCommerceIconFocus}
                   doublehandler={handleCommerce}
-                  icon={commerceIconFocus}
                   image={commerceLogo}
                   title={"E-commerce MERN"}
                 />
-                {/* </OutsideClickHandler>
-                <OutsideClickHandler
-                  onOutsideClick={() => [setServiceIconFocus(false)]}
-                > */}
                 <Icon
                   window={service}
-                  singlehandler={handleServiceIconFocus}
                   doublehandler={handleService}
-                  icon={serviceIconFocus}
                   image={serviceLogo}
                   title={"Kamil Siński - Computer Service"}
                 />
-                {/* </OutsideClickHandler>
-                <OutsideClickHandler
-                  onOutsideClick={() => [setTwitterIconFocus(false)]}
-                > */}
                 <Icon
                   window={twitter}
-                  singlehandler={handleTwitterIconFocus}
                   doublehandler={handleTwitter}
-                  icon={twitterIconFocus}
                   image={twitterLogo}
                   title={"Twitter-Github-bot"}
                 />
-                {/* </OutsideClickHandler>
-                <OutsideClickHandler
-                  onOutsideClick={() => [setDashboardIconFocus(false)]}
-                > */}
                 <Icon
                   window={dashboard}
-                  singlehandler={handleDashboardIconFocus}
                   doublehandler={handleDashboard}
-                  icon={dashboardIconFocus}
                   image={dashboardLogo}
                   title={"Dashboard"}
                 />
-                {/* </OutsideClickHandler>
-                <OutsideClickHandler
-                  onOutsideClick={() => [setSpotifyIconFocus(false)]}
-                > */}
                 <Icon
                   window={spotify}
-                  singlehandler={handleSpotifyIconFocus}
                   doublehandler={handleSpotify}
-                  icon={spotifyIconFocus}
                   image={spotifyLogo}
                   title={"Spotify-node-api"}
                 />
-                {/* </OutsideClickHandler> */}
               </div>
             </div>
           }
@@ -337,38 +270,25 @@ const Desktop = () => {
         />
       </div>
       <div className="desktop-icons">
-        {/* <OutsideClickHandler onOutsideClick={() => [setAboutIconFocus(false)]}> */}
         <Icon
           window={about}
-          singlehandler={handleAboutIconFocus}
           doublehandler={handleAbout}
-          icon={aboutIconFocus}
           image={computer}
           title={"About me"}
         />
-        {/* </OutsideClickHandler> */}
-        {/* <OutsideClickHandler */}
-        {/* onOutsideClick={() => [setProjectIconFocus(false)]}
-        > */}
         <Icon
           window={projects}
-          singlehandler={handleProjectIconFocus}
-          icon={projectIconFocus}
           doublehandler={handleProjects}
           image={folder}
           title={"My Projects"}
         />
-        {/* </OutsideClickHandler> */}
-        {/* <OutsideClickHandler onOutsideClick={() => [setResumeIconFocus(false)]}> */}
+
         <Icon
           window={resume}
-          singlehandler={handleResumeIconFocus}
-          icon={resumeIconFocus}
           doublehandler={handleResume}
           image={document}
           title={"Resume"}
         />
-        {/* </OutsideClickHandler> */}
       </div>
     </div>
   );
