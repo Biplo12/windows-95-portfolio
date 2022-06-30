@@ -1,4 +1,4 @@
-// import OutsideClickHandler from "react-outside-click-handler";
+import OutsideClickHandler from "react-outside-click-handler";
 import { useState } from "react";
 import Window from "../Window/Window";
 import Folder from "../Folder/Folder";
