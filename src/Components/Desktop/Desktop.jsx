@@ -208,7 +208,7 @@ const Desktop = () => {
                   singlehandler={handleSpotifyIconFocus}
                   doublehandler={handleSpotify}
                   icon={spotifyIconFocus}
-                  // image={spotifyLogo}
+                  image={spotifyLogo}
                   title={"Spotify-node-api"}
                 />
                 {/* </OutsideClickHandler> */}

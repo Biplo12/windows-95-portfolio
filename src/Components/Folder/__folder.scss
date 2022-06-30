@@ -85,7 +85,8 @@
 }
 .atel-window,
 .commerce-window,
-.service-window .twitter-window,
+.service-window,
+.twitter-window,
 .dashboard-window,
 .spotify-window {
   position: relative;
@@ -93,7 +94,6 @@
 .folder.closed {
   display: none;
 }
-
 .focus {
   z-index: 999;
 }
