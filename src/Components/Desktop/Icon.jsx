@@ -1,6 +1,6 @@
 import React from "react";
 
-const icon = ({ window, singlehandler, doublehandler, image, title, icon }) => {
+const Icon = ({ window, singlehandler, doublehandler, image, title, icon }) => {
   return (
     <div
       className={icon ? "desktop-icon marked" : "desktop-icon"}
@@ -13,4 +13,4 @@ const icon = ({ window, singlehandler, doublehandler, image, title, icon }) => {
   );
 };
 
-export default icon;
+export default Icon;
