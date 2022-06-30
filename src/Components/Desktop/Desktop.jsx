@@ -1,33 +1,65 @@
+import OutsideClickHandler from "react-outside-click-handler";
+import { useState } from "react";
 import Window from "../Window/Window";
+import Folder from "../Folder/Folder";
 import Icon from "./Icon";
 import document from "../../Images/window/document.png";
 import folder from "../../Images/Desktop/folder.png";
 import computer from "../../Images/Desktop/computer.png";
-import { useState } from "react";
-import OutsideClickHandler from "react-outside-click-handler";
+import aTel from "../../Images/folder/a-tel.png";
+import commerceLogo from "../../Images/folder/commerce.png";
+import serviceLogo from "../../Images/folder/sinski.png";
 
 const Desktop = () => {
+  //About states
   const [about, setAbout] = useState(true);
-  const [projects, setProjects] = useState(false);
-  const [resume, setResume] = useState(false);
   const [aboutFocus, setAboutFocus] = useState(false);
-  const [projectFocus, setProjectFocus] = useState(false);
-  const [resumeFocus, setResumeFocus] = useState(false);
-
   const handleAbout = () => setAbout(!about);
+
+  //Projects states
+  const [projects, setProjects] = useState(false);
+  const [projectFocus, setProjectFocus] = useState(false);
   const handleProjects = () => setProjects(!projects);
+
+  //Resume states
+  const [resume, setResume] = useState(false);
+  const [resumeFocus, setResumeFocus] = useState(false);
   const handleResume = () => setResume(!resume);
 
-  //icons focus
+  //Atel states
+  const [atel, setAtel] = useState(false);
+  const [atelFocus, setAtelFocus] = useState(false);
+  const handleAtel = () => setAtel(!atel);
 
+  //e-commerce states
+  const [commerce, setCommerce] = useState(false);
+  const [commerceFocus, setCommerceFocus] = useState(false);
+  const handleCommerce = () => setCommerce(!commerce);
+
+  //service states
+  const [service, setService] = useState(false);
+  const [serviceFocus, setServiceFocus] = useState(false);
+  const handleService = () => setService(!service);
+
+  //icons focus states
   const [aboutIconFocus, setAboutIconFocus] = useState(false);
   const handleAboutIconFocus = () => setAboutIconFocus(!aboutIconFocus);
-
+  //
   const [projectIconFocus, setProjectIconFocus] = useState(false);
   const handleProjectIconFocus = () => setProjectIconFocus(!projectIconFocus);
-
+  //
   const [resumeIconFocus, setResumeIconFocus] = useState(false);
   const handleResumeIconFocus = () => setResumeIconFocus(!resumeIconFocus);
+  //
+  const [atelIconFocus, setAtelIconFocus] = useState(false);
+  const handleAtelIconFocus = () => setAtelIconFocus(!atelIconFocus);
+  //
+  const [commerceIconFocus, setCommerceIconFocus] = useState(false);
+  const handleCommerceIconFocus = () =>
+    setCommerceIconFocus(!commerceIconFocus);
+  //
+  const [serviceIconFocus, setServiceIconFocus] = useState(false);
+  const handleServiceIconFocus = () => setServiceIconFocus(!serviceIconFocus);
 
   return (
     <div className="desktop-container">
@@ -36,7 +68,7 @@ const Desktop = () => {
       </div>
       <div
         className={aboutFocus ? "about-window focus" : "about-window no-focus"}
-        tabIndex={1}
+        tabIndex={0}
         onFocus={() => setAboutFocus(!aboutFocus)}
         onBlur={() => setAboutFocus(!aboutFocus)}
       >
@@ -64,7 +96,6 @@ const Desktop = () => {
           }
         />
       </div>
-
       <div
         className={
           projectFocus ? "project-window focus" : "project-window no-focus"
@@ -73,14 +104,101 @@ const Desktop = () => {
         onFocus={() => setProjectFocus(!projectFocus)}
         onBlur={() => setProjectFocus(!projectFocus)}
       >
-        <Window
+        <Folder
           icon={folder}
           title={"My Projects"}
-          handleWindow={handleProjects}
-          window={projects}
+          handleFolder={handleProjects}
+          folder={projects}
           content={
             <div className="project-container">
-              <h1>Hi there, I'm Robert - aka Biplo12</h1>
+              <div className="desktop-icons">
+                <OutsideClickHandler
+                  onOutsideClick={() => [setAtelIconFocus(false)]}
+                >
+                  <Icon
+                    window={atel}
+                    singlehandler={handleAtelIconFocus}
+                    doublehandler={handleAtel}
+                    icon={atelIconFocus}
+                    image={aTel}
+                    title={"A-tel Borzek"}
+                  />
+                </OutsideClickHandler>
+                <OutsideClickHandler
+                  onOutsideClick={() => [setCommerceIconFocus(false)]}
+                >
+                  <Icon
+                    window={commerce}
+                    singlehandler={handleCommerceIconFocus}
+                    doublehandler={handleCommerce}
+                    icon={commerceIconFocus}
+                    image={commerceLogo}
+                    title={"E-commerce MERN"}
+                  />
+                </OutsideClickHandler>
+                <OutsideClickHandler
+                  onOutsideClick={() => [setServiceIconFocus(false)]}
+                >
+                  <Icon
+                    window={service}
+                    singlehandler={handleServiceIconFocus}
+                    doublehandler={handleService}
+                    icon={serviceIconFocus}
+                    image={serviceLogo}
+                    title={"Kamil Siński - Computer Service"}
+                  />
+                </OutsideClickHandler>
+              </div>
+            </div>
+          }
+        />
+      </div>
+      <div
+        className={atelFocus ? "atel-window focus" : "atel-window no-focus"}
+        tabIndex={0}
+        onFocus={() => setAtelFocus(!atelFocus)}
+        onBlur={() => setAtelFocus(!atelFocus)}
+      >
+        <Window
+          icon={computer}
+          title={"Atel"}
+          handleWindow={handleAtel}
+          window={atel}
+          content={<div className="atel-window">atel</div>}
+        />
+      </div>
+      <div
+        className={
+          commerceFocus ? "commerce-window focus" : "commerce-window no-focus"
+        }
+        tabIndex={0}
+        onFocus={() => setCommerceFocus(!commerceFocus)}
+        onBlur={() => setCommerceFocus(!commerceFocus)}
+      >
+        <Window
+          icon={commerceLogo}
+          title={"e-commerce MERN"}
+          handleWindow={handleCommerce}
+          window={commerce}
+          content={<div className="commerce-window">e-commerce</div>}
+        />
+      </div>
+      <div
+        className={
+          serviceFocus ? "service-window focus" : "service-window no-focus"
+        }
+        tabIndex={0}
+        onFocus={() => setServiceFocus(!serviceFocus)}
+        onBlur={() => setServiceFocus(!serviceFocus)}
+      >
+        <Window
+          icon={serviceLogo}
+          title={"Kamil Siński - Computer Service"}
+          handleWindow={handleService}
+          window={service}
+          content={
+            <div className="service-window">
+              Kamil Siński - Computer Service
             </div>
           }
         />

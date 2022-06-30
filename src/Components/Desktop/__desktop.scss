@@ -13,8 +13,6 @@
     }
   }
   .desktop-icons {
-    width: 64px;
-    height: 100%;
     padding: 1rem;
     .desktop-icon {
       display: flex;
@@ -38,7 +36,12 @@
       }
     }
     .marked {
+      img {
+        filter: brightness(0) saturate(100%) invert(13%) sepia(53%)
+          saturate(4671%) hue-rotate(236deg) brightness(81%) contrast(138%);
+      }
       p {
+        padding: 1px;
         border: 1px dotted white;
         background-color: $blue;
       }

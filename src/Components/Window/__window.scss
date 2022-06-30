@@ -44,7 +44,8 @@
 }
 
 .project-window,
-.about-window {
+.about-window,
+.resume-window {
   position: relative;
 }
 
@@ -53,8 +54,7 @@
 }
 .no-focus {
   z-index: 0;
-}
-
-.resume-window {
-  z-index: 10;
+  .topbar {
+    background-color: #7b7d7b;
+  }
 }

@@ -4,7 +4,7 @@ import { useState } from "react";
 const WelcomePage = ({ icon, title, content, handleWindow, window }) => {
   return (
     <Draggable handle=".topbar">
-      <div className={window ? "window opened" : "window closed"}>
+      <div className={window ? "window opened" : "window closed "}>
         <div className="topbar">
           <div className="topbar-title">
             <img src={icon} alt={`${title} icon`} />
