@@ -3,7 +3,6 @@ import { useState } from "react";
 import Window from "../Window/Window";
 import Folder from "../Folder/Folder";
 import Icon from "./Icon";
-
 import document from "../../Images/window/document.png";
 import folder from "../../Images/Desktop/folder.png";
 import computer from "../../Images/Desktop/computer.png";
