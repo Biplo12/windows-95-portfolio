@@ -1,6 +1,5 @@
 import React from "react";
 import Draggable from "react-draggable";
-import { useState } from "react";
 
 const Folder = ({ folder, icon, title, handleFolder, content }) => {
   return (

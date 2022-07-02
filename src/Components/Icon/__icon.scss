@@ -1,0 +1,29 @@
+.desktop-icon {
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 64px;
+  height: 64px;
+  cursor: pointer;
+  img {
+    height: 32px;
+  }
+  p {
+    text-align: center;
+    margin-top: 0.35rem;
+    padding: 2px;
+  }
+  .marked {
+    img {
+      filter: brightness(0) saturate(100%) invert(13%) sepia(53%)
+        saturate(4671%) hue-rotate(236deg) brightness(81%) contrast(138%);
+    }
+    p {
+      padding: 1px;
+      border: 1px dotted white;
+      background-color: $blue;
+    }
+  }
+}
