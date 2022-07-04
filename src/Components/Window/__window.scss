@@ -1,5 +1,6 @@
 .window,
 .folder {
+  scroll-padding: 50px;
   width: 800px;
   height: 500px;
   position: absolute;
@@ -11,6 +12,10 @@
   border-bottom: inset 2px white;
   border-right: inset 2px white;
   .topbar {
+    position: sticky;
+    left: 0;
+    top: 0;
+    z-index: 999;
     width: 100%;
     height: 4vh;
     display: flex;
@@ -37,7 +42,47 @@
   }
   .window-content {
     width: 100%;
-    height: calc(100% - 2.5vh - 4vh);
+    .about-window,
+    .atel-window,
+    .commerce-window,
+    .twitter-window,
+    .spotify-window {
+      width: 100%;
+      height: calc(100% - 4vh);
+      padding: 2rem;
+      overflow: scroll;
+      overflow-x: hidden;
+      img {
+        padding-right: 1rem;
+      }
+      h1 {
+        width: 100%;
+        text-align: center;
+        font-size: 4rem;
+      }
+      h2 {
+        padding: 2rem 0;
+        font-size: 2rem;
+      }
+      p {
+        width: 90%;
+        text-align: left;
+        font-size: 1.5rem;
+        span {
+          margin-top: 1rem;
+        }
+      }
+      ul li {
+        font-size: 1.5rem;
+      }
+    }
+    .about-window {
+      h2 {
+        width: 100%;
+        text-align: center;
+        padding: 1rem 0 2rem 0;
+      }
+    }
   }
 }
 

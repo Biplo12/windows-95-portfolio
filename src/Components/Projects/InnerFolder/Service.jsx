@@ -18,7 +18,7 @@ const Service = ({ handleWindow, window }) => {
           title={"Kamil Siński - Computer Service"}
           handleWindow={handleWindow}
           window={window}
-          content={<div className="service-window">Service</div>}
+          content={<div className="service-window">In progress</div>}
         />
       </div>
     </>

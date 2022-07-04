@@ -26,7 +26,7 @@ const About = () => {
             <div className="about-window">
               <h1>Hi there, I'm Robert - aka Biplo12</h1>
               <h2>I'm a junior web developer!</h2>
-              <ol>
+              <ul>
                 <li>I'm currently learning MERN stack!</li>
                 <li>2022 Goals: contribute more!</li>
                 <li>I'm currently looking for job!</li>
@@ -36,7 +36,7 @@ const About = () => {
                     robertbiplosek@gmail.com
                   </a>
                 </li>
-              </ol>
+              </ul>
             </div>
           }
         />

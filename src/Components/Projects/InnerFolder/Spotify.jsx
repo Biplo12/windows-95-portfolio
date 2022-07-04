@@ -18,7 +18,37 @@ const Spotify = ({ handleWindow, window }) => {
           title={"Spotify-node-api"}
           handleWindow={handleWindow}
           window={window}
-          content={<div className="spotify-window">Spotify</div>}
+          content={
+            <div className="spotify-window">
+              <h1>spotify-web-api-node</h1>
+              <h2>Description:</h2>
+              <p>
+                Api based on spotify web api node repo. Includes working access
+                token and refresh token. Can be used to split with UI design.
+              </p>
+              <h2>Build with:</h2>
+              <ul>
+                <li>
+                  <a href="https://reactjs.org/">React.js</a>
+                </li>
+                <li>
+                  <a href="https://nodejs.org/en/">Node.js</a>
+                </li>
+                <li>
+                  <a href="https://expressjs.com/">Express.js</a>
+                </li>
+              </ul>
+              <h2>Usage:</h2>
+              <p>
+                API can be used in project which assumes a summary of the web
+                application connected to the spotify api. For more examples,
+                please refer to the{" "}
+                <a href="https://github.com/thelinmichael/spotify-web-api-node">
+                  Documentation
+                </a>
+              </p>
+            </div>
+          }
         />
       </div>
     </>

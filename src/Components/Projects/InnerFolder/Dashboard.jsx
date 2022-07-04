@@ -20,7 +20,7 @@ const Dashboard = ({ handleWindow, window }) => {
           title={"Dashboard"}
           handleWindow={handleWindow}
           window={window}
-          content={<div className="dashboard-window">Dashboard</div>}
+          content={<div className="dashboard-window">In progress</div>}
         />
       </div>
     </>
